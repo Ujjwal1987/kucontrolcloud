@@ -40,3 +40,10 @@ exports.docsifttt = function(req, res) {
 exports.getv2 = function(req, res) {
     res.send('Yes, I am!');
 };
+
+exports.privacy = function(req, res){
+    errormessages = req.flash('error');
+    infomessages = req.flash('info');
+    res.render('privacy', {title: "Privacy Policy", user: req.user, errormessages: errormessages,
+      infomessages: infomessages});
+  };

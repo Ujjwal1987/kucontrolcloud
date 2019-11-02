@@ -64,6 +64,9 @@ Routes.prototype.setupGeneralRoutes = function (app) {
     // V2 route - response to this route means this openHAB-cloud is using v2 transport based on socket.io 1.0
     app.get('/v2', homepage.getv2);
 
+    // Privacy
+    app.get('/privacy', homepage.privacy);
+
     // Events
     app.get('/events', this.ensureAuthenticated, events_routes.eventsget);
 
